@@ -2,6 +2,8 @@ page 50109 FactboxExample
 {
     Caption = 'FactboxExample';
     PageType = Card;
+    UsageCategory = Administration;
+    ApplicationArea = All;
 
     layout
     {

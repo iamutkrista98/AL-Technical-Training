@@ -11,64 +11,6 @@
       <rd:DataSourceID>f40436de-5bde-442d-90e9-74341cb4ac2a</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Customer_No_">
-          <DataField>Customer_No_</DataField>
-        </Field>
-        <Field Name="Customer_Name">
-          <DataField>Customer_Name</DataField>
-        </Field>
-        <Field Name="CompName">
-          <DataField>CompName</DataField>
-        </Field>
-        <Field Name="CompImage">
-          <DataField>CompImage</DataField>
-        </Field>
-        <Field Name="CompPhone">
-          <DataField>CompPhone</DataField>
-        </Field>
-        <Field Name="Posting_Date">
-          <DataField>Posting_Date</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="CompAddress">
-          <DataField>CompAddress</DataField>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-        </Field>
-        <Field Name="ItemNo_">
-          <DataField>ItemNo_</DataField>
-        </Field>
-        <Field Name="Item_Desc">
-          <DataField>Item_Desc</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="Total_Amount">
-          <DataField>Total_Amount</DataField>
-        </Field>
-        <Field Name="Total_AmountFormat">
-          <DataField>Total_AmountFormat</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -835,6 +777,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -851,7 +794,7 @@
                 <TablixMember>
                   <Group Name="Details">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Customer_No_.Value</GroupExpression>
+                      <GroupExpression>=Fields!No_.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                 </TablixMember>
@@ -1014,12 +957,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -1059,4 +996,62 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Customer_No_">
+          <DataField>Customer_No_</DataField>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>Customer_Name</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompImage">
+          <DataField>CompImage</DataField>
+        </Field>
+        <Field Name="CompPhone">
+          <DataField>CompPhone</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+        </Field>
+        <Field Name="ItemNo_">
+          <DataField>ItemNo_</DataField>
+        </Field>
+        <Field Name="Item_Desc">
+          <DataField>Item_Desc</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Total_Amount">
+          <DataField>Total_Amount</DataField>
+        </Field>
+        <Field Name="Total_AmountFormat">
+          <DataField>Total_AmountFormat</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

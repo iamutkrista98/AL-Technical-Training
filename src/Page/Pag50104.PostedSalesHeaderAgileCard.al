@@ -61,6 +61,7 @@ page 50104 PostedSalesHeaderAgileCard
             {
                 Promoted = true;
                 Image = Print;
+                InFooterBar = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 ApplicationArea = all;

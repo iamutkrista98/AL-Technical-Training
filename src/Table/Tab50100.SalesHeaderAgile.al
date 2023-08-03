@@ -2,6 +2,8 @@ table 50100 "Sales Header Agile"
 {
     Caption = 'Sales Header Agile';
     DataClassification = ToBeClassified;
+    LookupPageId = "Item Card";
+    DrillDownPageId = "Item Card";
 
     fields
     {
