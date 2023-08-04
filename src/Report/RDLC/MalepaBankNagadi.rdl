@@ -11,88 +11,6 @@
       <rd:DataSourceID>fadc747f-4e8b-4698-95a0-a9d6a3eb6b04</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="StartDate">
-          <DataField>StartDate</DataField>
-        </Field>
-        <Field Name="EndDate">
-          <DataField>EndDate</DataField>
-        </Field>
-        <Field Name="SumMonthlyGLDebit">
-          <DataField>SumMonthlyGLDebit</DataField>
-        </Field>
-        <Field Name="SumMonthlyGLDebitFormat">
-          <DataField>SumMonthlyGLDebitFormat</DataField>
-        </Field>
-        <Field Name="SumMonthlyGLCredit">
-          <DataField>SumMonthlyGLCredit</DataField>
-        </Field>
-        <Field Name="SumMonthlyGLCreditFormat">
-          <DataField>SumMonthlyGLCreditFormat</DataField>
-        </Field>
-        <Field Name="SumMonthlyBankDebit">
-          <DataField>SumMonthlyBankDebit</DataField>
-        </Field>
-        <Field Name="SumMonthlyBankDebitFormat">
-          <DataField>SumMonthlyBankDebitFormat</DataField>
-        </Field>
-        <Field Name="SumMonthlyBankCredit">
-          <DataField>SumMonthlyBankCredit</DataField>
-        </Field>
-        <Field Name="SumMonthlyBankCreditFormat">
-          <DataField>SumMonthlyBankCreditFormat</DataField>
-        </Field>
-        <Field Name="GL_Posting_Date">
-          <DataField>GL_Posting_Date</DataField>
-        </Field>
-        <Field Name="GL_Document_No_">
-          <DataField>GL_Document_No_</DataField>
-        </Field>
-        <Field Name="GL_Description">
-          <DataField>GL_Description</DataField>
-        </Field>
-        <Field Name="GLDebitAmount">
-          <DataField>GLDebitAmount</DataField>
-        </Field>
-        <Field Name="GLDebitAmountFormat">
-          <DataField>GLDebitAmountFormat</DataField>
-        </Field>
-        <Field Name="GLCreditAmount">
-          <DataField>GLCreditAmount</DataField>
-        </Field>
-        <Field Name="GLCreditAmountFormat">
-          <DataField>GLCreditAmountFormat</DataField>
-        </Field>
-        <Field Name="Bank_Debit_Amount">
-          <DataField>Bank_Debit_Amount</DataField>
-        </Field>
-        <Field Name="Bank_Debit_AmountFormat">
-          <DataField>Bank_Debit_AmountFormat</DataField>
-        </Field>
-        <Field Name="Bank_Credit_Amount">
-          <DataField>Bank_Credit_Amount</DataField>
-        </Field>
-        <Field Name="Bank_Credit_AmountFormat">
-          <DataField>Bank_Credit_AmountFormat</DataField>
-        </Field>
-        <Field Name="Bank_Document_No">
-          <DataField>Bank_Document_No</DataField>
-        </Field>
-        <Field Name="Bank_Posting_Date">
-          <DataField>Bank_Posting_Date</DataField>
-        </Field>
-        <Field Name="Bank_Description">
-          <DataField>Bank_Description</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -107,7 +25,7 @@
                   <Width>0.54389in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69305in</Width>
+                  <Width>0.86805in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.48334in</Width>
@@ -152,12 +70,12 @@
                   <Width>0.45834in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.71667in</Width>
+                  <Width>0.575in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.78334in</Height>
+                  <Height>0.55834in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -824,9 +742,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GL_Posting_Date.Value</Value>
+                                  <Value>=FormatDateTime(Fields!GL_Posting_Date.Value,DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1405,7 +1324,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Bank_Posting_Date.Value</Value>
+                                  <Value>=FormatDateTime(Fields!Bank_Posting_Date.Value,DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -2251,7 +2170,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=(Fields!SumMonthlyGLDebit.Value+Fields!SumMonthlyBankDebit.Value)-(Fields!SumMonthlyGLCredit.Value+Fields!SumMonthlyBankCredit.Value)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2679,14 +2598,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox110">
+                        <Textbox Name="SumPrevMonthlyGLDebit">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SumPrevMonthlyGLDebit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2696,7 +2615,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox110</rd:DefaultName>
+                          <rd:DefaultName>SumPrevMonthlyGLDebit</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2712,14 +2631,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox75">
+                        <Textbox Name="SumPrevMonthlyGLCredit">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SumPrevMonthlyGLCredit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2729,7 +2648,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox75</rd:DefaultName>
+                          <rd:DefaultName>SumPrevMonthlyGLCredit</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2745,14 +2664,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox76">
+                        <Textbox Name="SumPrevMonthlyBankDebit">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SumPrevMonthlyBankDebit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2762,7 +2681,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox76</rd:DefaultName>
+                          <rd:DefaultName>SumPrevMonthlyBankDebit</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2778,14 +2697,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox77">
+                        <Textbox Name="SumPrevMonthlyBankCredit">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!SumPrevMonthlyBankCredit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2795,7 +2714,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox77</rd:DefaultName>
+                          <rd:DefaultName>SumPrevMonthlyBankCredit</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2851,7 +2770,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=(Fields!SumPrevMonthlyGLDebit.Value+Fields!SumPrevMonthlyBankDebit.Value)-(Fields!SumPrevMonthlyGLCredit.Value+Fields!SumPrevMonthlyBankCredit.Value)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -3286,7 +3205,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!GLDebitAmount.Value)</Value>
+                                  <Value>=Fields!SumMonthlyGLDebit.Value+Fields!SumPrevMonthlyGLDebit.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>8pt</FontSize>
@@ -3320,7 +3239,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!GLCreditAmount.Value)</Value>
+                                  <Value>=Fields!SumMonthlyGLCredit.Value+Fields!SumPrevMonthlyGLCredit.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>8pt</FontSize>
@@ -3354,7 +3273,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Bank_Debit_Amount.Value)</Value>
+                                  <Value>=Fields!SumMonthlyBankDebit.Value+Fields!SumPrevMonthlyBankDebit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -3387,7 +3306,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Bank_Credit_Amount.Value)</Value>
+                                  <Value>=Fields!SumMonthlyBankCredit.Value+Fields!SumPrevMonthlyBankCredit.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -3453,7 +3372,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=(Sum(Fields!GLDebitAmount.Value)+SUM(Fields!Bank_Debit_Amount.Value))-(Sum(Fields!GLCreditAmount.Value)+SUM(Fields!Bank_Credit_Amount.Value))</Value>
+                                  <Value>=((Fields!SumMonthlyGLDebit.Value+Fields!SumMonthlyBankDebit.Value)-(Fields!SumMonthlyGLCredit.Value+Fields!SumMonthlyBankCredit.Value))+((Fields!SumPrevMonthlyGLDebit.Value+Fields!SumPrevMonthlyBankDebit.Value)-(Fields!SumPrevMonthlyGLCredit.Value+Fields!SumPrevMonthlyBankCredit.Value))</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4232,169 +4151,220 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0.11667in</Top>
-            <Height>2.52501in</Height>
-            <Width>11.09309in</Width>
+            <Top>1.7375in</Top>
+            <Height>2.30001in</Height>
+            <Width>11.12642in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-        </ReportItems>
-        <Height>2.64168in</Height>
-        <Style />
-      </Body>
-      <Width>11.09309in</Width>
-      <Page>
-        <PageHeader>
-          <Height>1.96667in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>संघ/ प्रदेश / स्थानीय तह 
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>संघ/ प्रदेश / स्थानीय तह 
 .........मन्त्रालय /विभाग / कार्यालय
 कार्यालय कोड नं. :  </Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>Nirmala UI Semilight</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                        <Color>#000000</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.1875in</Top>
-              <Left>4.5639in</Left>
-              <Height>0.625in</Height>
-              <Width>2.65833in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>बैंक नगदी किताब 
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Left>4.5639in</Left>
+            <Height>0.625in</Height>
+            <Width>2.65833in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>बैंक नगदी किताब 
 </Value>
-                      <Style>
-                        <FontFamily>Nirmala UI Semilight</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.95in</Top>
-              <Left>4.5639in</Left>
-              <Height>0.3in</Height>
-              <Width>2.65833in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>बजेट उप शीर्षक न:</Value>
-                      <Style>
-                        <FontFamily>Nirmala UI Semilight</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.65417in</Top>
-              <Height>0.25in</Height>
-              <Width>1.96667in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox5">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=First(Fields!StartDate.Value, "DataSet_Result") &amp; " देखि "  &amp; First(Fields!EndDate.Value, "DataSet_Result") &amp; " सम्म "</Value>
-                      <Style>
-                        <FontFamily>Nirmala UI Semilight</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.27778in</Top>
-              <Left>4.5639in</Left>
-              <Height>0.25in</Height>
-              <Width>2.65833in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>0.7625in</Top>
+            <Left>4.5639in</Left>
+            <Height>0.3in</Height>
+            <Width>2.65833in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!StartDate.Value, "DataSet_Result") &amp; " देखि " &amp; First(Fields!EndDate.Value, "DataSet_Result") &amp; " सम्म "</Value>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox5</rd:DefaultName>
+            <Top>1.09028in</Top>
+            <Left>4.5639in</Left>
+            <Height>0.25in</Height>
+            <Width>2.65833in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>बजेट उप शीर्षक न:</Value>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.46667in</Top>
+            <Height>0.25in</Height>
+            <Width>1.96667in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox94">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>म.ले.प.फारम नं :</Value>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>साबिकको फारम नं : </Value>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">
+</Value>
+                    <Style>
+                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox94</rd:DefaultName>
+            <Left>9.81809in</Left>
+            <Height>0.375in</Height>
+            <Width>1.1in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>4.03751in</Height>
+        <Style />
+      </Body>
+      <Width>11.12642in</Width>
+      <Page>
+        <PageHeader>
+          <Height>0.225in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
             <Border>
               <Style>None</Style>
@@ -4409,12 +4379,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -4454,4 +4418,110 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="SumMonthlyGLDebit">
+          <DataField>SumMonthlyGLDebit</DataField>
+        </Field>
+        <Field Name="SumMonthlyGLDebitFormat">
+          <DataField>SumMonthlyGLDebitFormat</DataField>
+        </Field>
+        <Field Name="SumMonthlyGLCredit">
+          <DataField>SumMonthlyGLCredit</DataField>
+        </Field>
+        <Field Name="SumMonthlyGLCreditFormat">
+          <DataField>SumMonthlyGLCreditFormat</DataField>
+        </Field>
+        <Field Name="SumMonthlyBankDebit">
+          <DataField>SumMonthlyBankDebit</DataField>
+        </Field>
+        <Field Name="SumMonthlyBankDebitFormat">
+          <DataField>SumMonthlyBankDebitFormat</DataField>
+        </Field>
+        <Field Name="SumMonthlyBankCredit">
+          <DataField>SumMonthlyBankCredit</DataField>
+        </Field>
+        <Field Name="SumMonthlyBankCreditFormat">
+          <DataField>SumMonthlyBankCreditFormat</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyGLDebit">
+          <DataField>SumPrevMonthlyGLDebit</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyGLDebitFormat">
+          <DataField>SumPrevMonthlyGLDebitFormat</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyGLCredit">
+          <DataField>SumPrevMonthlyGLCredit</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyGLCreditFormat">
+          <DataField>SumPrevMonthlyGLCreditFormat</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyBankDebit">
+          <DataField>SumPrevMonthlyBankDebit</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyBankDebitFormat">
+          <DataField>SumPrevMonthlyBankDebitFormat</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyBankCredit">
+          <DataField>SumPrevMonthlyBankCredit</DataField>
+        </Field>
+        <Field Name="SumPrevMonthlyBankCreditFormat">
+          <DataField>SumPrevMonthlyBankCreditFormat</DataField>
+        </Field>
+        <Field Name="GL_Posting_Date">
+          <DataField>GL_Posting_Date</DataField>
+        </Field>
+        <Field Name="GL_Document_No_">
+          <DataField>GL_Document_No_</DataField>
+        </Field>
+        <Field Name="GL_Description">
+          <DataField>GL_Description</DataField>
+        </Field>
+        <Field Name="GLDebitAmount">
+          <DataField>GLDebitAmount</DataField>
+        </Field>
+        <Field Name="GLDebitAmountFormat">
+          <DataField>GLDebitAmountFormat</DataField>
+        </Field>
+        <Field Name="GLCreditAmount">
+          <DataField>GLCreditAmount</DataField>
+        </Field>
+        <Field Name="GLCreditAmountFormat">
+          <DataField>GLCreditAmountFormat</DataField>
+        </Field>
+        <Field Name="Bank_Debit_Amount">
+          <DataField>Bank_Debit_Amount</DataField>
+        </Field>
+        <Field Name="Bank_Debit_AmountFormat">
+          <DataField>Bank_Debit_AmountFormat</DataField>
+        </Field>
+        <Field Name="Bank_Credit_Amount">
+          <DataField>Bank_Credit_Amount</DataField>
+        </Field>
+        <Field Name="Bank_Credit_AmountFormat">
+          <DataField>Bank_Credit_AmountFormat</DataField>
+        </Field>
+        <Field Name="Bank_Document_No">
+          <DataField>Bank_Document_No</DataField>
+        </Field>
+        <Field Name="Bank_Posting_Date">
+          <DataField>Bank_Posting_Date</DataField>
+        </Field>
+        <Field Name="Bank_Description">
+          <DataField>Bank_Description</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

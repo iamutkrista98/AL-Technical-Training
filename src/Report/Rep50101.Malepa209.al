@@ -19,25 +19,56 @@ report 50101 Malepa209
             }
             column(SumMonthlyGLDebit; SumMonthlyGLDebit)
             {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
 
             }
             column(SumMonthlyGLCredit; SumMonthlyGLCredit)
             {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
 
             }
             column(SumMonthlyBankDebit; SumMonthlyBankDebit)
             {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
 
             }
             column(SumMonthlyBankCredit; SumMonthlyBankCredit)
             {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
 
+            }
+            column(SumPrevMonthlyGLDebit; SumPrevMonthlyGLDebit)
+            {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
+
+            }
+            column(SumPrevMonthlyGLCredit; SumPrevMonthlyGLCredit)
+            {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
+
+            }
+            column(SumPrevMonthlyBankDebit; SumPrevMonthlyBankDebit)
+            {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
+
+            }
+            column(SumPrevMonthlyBankCredit; SumPrevMonthlyBankCredit)
+            {
+                AutoFormatType = 1;
+                DecimalPlaces = 0 : 0;
             }
 
 
             dataitem("General Ledger Entries"; "G/L Entry")
             {
-                DataItemTableView = sorting("Posting Date", "Document No.") order(ascending);
+                DataItemTableView = sorting("Posting Date", "Document No.");
 
                 column(GL_Posting_Date; "General Ledger Entries"."Posting Date")
                 {
@@ -64,6 +95,7 @@ report 50101 Malepa209
 
                 }
 
+
                 trigger OnPreDataItem()
                 begin
                     if CashGL = '' then
@@ -71,34 +103,16 @@ report 50101 Malepa209
                     else begin
                         "General Ledger Entries".SetFilter("G/L Account No.", CashGL);
                         "General Ledger Entries".SetRange("General Ledger Entries"."Posting Date", StartDate, EndDate);
-                        // if not "General Ledger Entries".FindSet() then
-                        //     CurrReport.Skip();
+                        if not "General Ledger Entries".FindSet() then
+                            Error('No Data Found! Check filters and try again!');
                     end;
-
-
-
-
-
-                end;
-
-
-                trigger OnAfterGetRecord()
-                var
-
-                begin
-                    // "General Ledger Entries".SetRange("Posting Date", StartDate, StartDate + 30);
-                    // EvalDeb := CalculateGLMonthlyAmount("General Ledger Entries"."Debit Amount");
-                    // EvalCred := CalculateGLMonthlyAmount("General Ledger Entries"."Credit Amount");
-                    // SumMonthlyGLDebit += EvalDeb;
-                    // SumMonthlyGLCredit += EvalCred;
-
                 end;
 
             }
 
             dataitem("Bank Account Ledger Entry"; "Bank Account Ledger Entry")
             {
-                DataItemTableView = sorting("Posting Date", "Document No.") order(ascending) where(Reversed = const(false));
+                DataItemTableView = sorting("Posting Date", "Document No.") where(Reversed = const(false));
                 column(Bank_Debit_Amount; "Bank Account Ledger Entry"."Debit Amount")
                 {
                     AutoFormatType = 1;
@@ -131,7 +145,7 @@ report 50101 Malepa209
                         "Bank Account Ledger Entry".SetFilter("Bank Account Ledger Entry"."Bank Account No.", BankGL);
                         "Bank Account Ledger Entry".SetRange("Bank Account Ledger Entry"."Posting Date", StartDate, EndDate);
                         if not "Bank Account Ledger Entry".FindSet() then
-                            CurrReport.Skip();
+                            Error('No Data Found! Check filters and try again!');
 
                     end;
 
@@ -143,15 +157,31 @@ report 50101 Malepa209
             begin
                 NewStartDate := CalcDate('<-1D>', StartDate);
                 GenLedEntry.Reset();
-                GenLedEntry.SetRange("Posting Date", 0D, NewStartDate);
+                GenLedEntry.SetRange(GenLedEntry."Posting Date", 0D, NewStartDate);
                 GenLedEntry.SetRange("G/L Account No.", CashGL);
                 if GenLedEntry.Findset() then
+                    repeat
+                        SumPrevMonthlyGLDebit += GenLedEntry."Debit Amount";
+                        SumPrevMonthlyGLCredit += GenLedEntry."Credit Amount";
+                    until GenLedEntry.Next() = 0;
+                BankLedEntry.Reset();
+                BankLedEntry.SetRange(BankLedEntry."Posting Date", 0D, NewStartDate);
+                BankLedEntry.SetRange("Bank Account No.", BankGL);
+                if BankLedEntry.FindSet() then
+                    repeat
+                        SumPrevMonthlyBankDebit += BankLedEntry."Debit Amount";
+                        SumPrevMonthlyBankCredit += BankLedEntry."Credit Amount";
+                    until BankLedEntry.Next() = 0;
+                GenLedEntry.Reset();
+                GenLedEntry.SetRange(GenLedEntry."Posting Date", StartDate, EndDate);
+                GenLedEntry.SetRange(GenLedEntry."G/L Account No.", CashGL);
+                if GenLedEntry.FindSet() then
                     repeat
                         SumMonthlyGLDebit += GenLedEntry."Debit Amount";
                         SumMonthlyGLCredit += GenLedEntry."Credit Amount";
                     until GenLedEntry.Next() = 0;
                 BankLedEntry.Reset();
-                BankLedEntry.SetRange(BankLedEntry."Posting Date", 0D, NewStartDate);
+                BankLedEntry.SetRange(BankLedEntry."Posting Date", StartDate, EndDate);
                 BankLedEntry.SetRange("Bank Account No.", BankGL);
                 if BankLedEntry.FindSet() then
                     repeat
@@ -211,8 +241,6 @@ report 50101 Malepa209
 
                     }
 
-
-
                 }
             }
 
@@ -223,14 +251,6 @@ report 50101 Malepa209
 
 
     }
-
-    procedure CalculateBankMonthlyAmount()
-    begin
-
-
-
-    end;
-
 
     var
         StartDate: Date;
