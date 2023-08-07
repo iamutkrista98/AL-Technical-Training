@@ -9,6 +9,8 @@ report 50101 Malepa209
     {
         dataitem("Company Information"; "Company Information")
         {
+            DataItemTableView = sorting("Primary Key");
+
             column(StartDate; StartDate)
             {
 
@@ -19,50 +21,46 @@ report 50101 Malepa209
             }
             column(SumMonthlyGLDebit; SumMonthlyGLDebit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumMonthlyGLCredit; SumMonthlyGLCredit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumMonthlyBankDebit; SumMonthlyBankDebit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumMonthlyBankCredit; SumMonthlyBankCredit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumPrevMonthlyGLDebit; SumPrevMonthlyGLDebit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumPrevMonthlyGLCredit; SumPrevMonthlyGLCredit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumPrevMonthlyBankDebit; SumPrevMonthlyBankDebit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
 
             }
             column(SumPrevMonthlyBankCredit; SumPrevMonthlyBankCredit)
             {
-                AutoFormatType = 1;
-                DecimalPlaces = 0 : 0;
+
+            }
+            column(DocType; DocType)
+            {
+
             }
 
 
@@ -84,14 +82,12 @@ report 50101 Malepa209
                 }
                 column(GLDebitAmount; "General Ledger Entries"."Debit Amount")
                 {
-                    AutoFormatType = 1;
-                    DecimalPlaces = 0 : 0;
+
 
                 }
                 column(GLCreditAmount; "General Ledger Entries"."Credit Amount")
                 {
-                    AutoFormatType = 1;
-                    DecimalPlaces = 0 : 0;
+
 
                 }
 
@@ -115,14 +111,12 @@ report 50101 Malepa209
                 DataItemTableView = sorting("Posting Date", "Document No.") where(Reversed = const(false));
                 column(Bank_Debit_Amount; "Bank Account Ledger Entry"."Debit Amount")
                 {
-                    AutoFormatType = 1;
-                    DecimalPlaces = 0 : 0;
+
 
                 }
                 column(Bank_Credit_Amount; "Bank Account Ledger Entry"."Credit Amount")
                 {
-                    AutoFormatType = 1;
-                    DecimalPlaces = 0 : 0;
+
 
                 }
                 column(Bank_Document_No; "Bank Account Ledger Entry"."Document No.")
@@ -153,6 +147,7 @@ report 50101 Malepa209
 
             }
 
+            //For company information
             trigger OnPreDataItem()
             begin
                 NewStartDate := CalcDate('<-1D>', StartDate);
@@ -232,7 +227,8 @@ report 50101 Malepa209
                     field(CashGL; CashGL)
                     {
                         ApplicationArea = All;
-                        TableRelation = "G/L Account";
+                        TableRelation = "G/L Account" where("Account Type" = const(Posting), "No." = filter(11001 .. 11004));
+
                         ToolTip = 'G/L Account';
                         trigger OnValidate()
                         begin
@@ -247,8 +243,6 @@ report 50101 Malepa209
 
 
         }
-
-
 
     }
 
@@ -268,13 +262,20 @@ report 50101 Malepa209
         NewStartDate: Date;
         GenLedEntry: Record "G/L Entry";
         BankLedEntry: Record "Bank Account Ledger Entry";
+        DocType: Text[20];
 
     trigger OnPreReport()
     begin
-        if (StartDate = 0D) or (EndDate = 0D) then
-            Error('Start Date and End Date are Mandatory!');
+        if (StartDate = 0D) or (EndDate = 0D) then begin
+            Error('Start Date and End Date are mandatory!');
+        end;
         if (CashGL = '') and (BankGL = '') then
-            Error('One of CashGL or BankGL must be selected');
+            Error('One of CashGL or BankGL must be selected!');
+        if (BankGL <> '') then
+            DocType := BankGL
+        else
+            DocType := CashGL;
+
     end;
 
 

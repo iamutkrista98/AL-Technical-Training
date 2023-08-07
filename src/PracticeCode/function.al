@@ -124,6 +124,88 @@ page 50139 MyPage
                 end;
 
             }
+            action(DateOperations)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Calendar;
+
+                trigger OnAction()
+
+                begin
+
+                    Message('Today is %1\ 1 Week from now is %2 \1 Month From Now is %3\ 1 Year from now is %4\ Custom Date Operation: %5 \%6 ', Today(), CalcDate('1W', Today()), CalcDate('1M', Today()), CalcDate('1Y', Today()), CalcDate('1Y+1M+3D', Today()), Date2DWY(Today(), 1));
+
+                end;
+
+            }
+            action(NameOperation)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                Image = Process;
+                trigger OnAction()
+                var
+                    CustomerNames: Text;
+                begin
+                    Customers.Add('Ram');
+                    Customers.Add('Sita');
+                    Customers.Add('Hari');
+
+                    //Message('The name in 3rd index is %1', Customers.Get(3));
+                    foreach CustomerNames in Customers do begin
+                        Message(CustomerNames);
+                    end;
+
+                end;
+
+            }
+            action("CRUD Operations")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    SaleHdr: Record "Sales Header Agile";
+                    count: Integer;
+                begin
+                    SaleHdr.SetRange("Customer No.", '10000');
+                    count := 0;
+                    if SaleHdr.FindSet() then
+                        repeat
+                            count += 1;
+                        until SaleHdr.Next() = 0;
+                    SaleHdr.DeleteAll(true);
+                    Message('Total of %1 entries deleted', count);
+                end;
+
+
+            }
+            action("Total Evaluation")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+                Image = Totals;
+                trigger OnAction()
+                var
+                    Cust: Record Customer;
+                begin
+                    Cust.SetCurrentKey("Bill-to Customer No.");
+                    Cust.SetRange("Bill-to Customer No.", '10000', '50000');
+                    Cust.CalcSums("Balance (LCY)");
+                    Message('The total is %1', Cust.CalcSums("Balance (LCY)"));
+                end;
+
+            }
             action(ControlStatementsEval)
             {
                 ApplicationArea = All;
@@ -158,6 +240,32 @@ page 50139 MyPage
 
                 end;
 
+
+            }
+            action(Find)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Find;
+
+                trigger OnAction()
+                var
+                    Cust: Record Customer;
+                begin
+                    // Cust.SetFilter(Cust."Location Code", 'BLUE');
+                    // if Cust.FindSet() then
+                    //     repeat
+                    //         Message('Customer Name: %1\Customer Address: Cust.Name, Cust.Address', Cust.Name, Cust.Address);
+                    //     until Cust.Next() = 0;
+
+                    Cust.SetFilter(Cust.Name, '@S*');
+                    if Cust.FindSet() then
+                        repeat
+                            Message('Customer Name: %1\Customer Address: Cust.Name, Cust.Address', Cust.Name, Cust.Address);
+                        until Cust.Next() = 0;
+                end;
 
             }
         }
@@ -198,6 +306,9 @@ page 50139 MyPage
         I: Integer;
         Factorial: Integer;
         txt: Text;
+        NewDate: Date;
+
+        Customers: List of [Text];
 
     procedure TestProcedure(var num1: Integer): Integer
     begin

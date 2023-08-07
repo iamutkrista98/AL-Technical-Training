@@ -25,7 +25,7 @@
                   <Width>0.54389in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.86805in</Width>
+                  <Width>1.09305in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.48334in</Width>
@@ -40,7 +40,7 @@
                   <Width>0.48833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.09167in</Width>
+                  <Width>0.86667in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.675in</Width>
@@ -88,7 +88,7 @@
                                 <TextRun>
                                   <Value>मिति </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -105,6 +105,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -124,7 +125,7 @@
                                 <TextRun>
                                   <Value>भौचर नं </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -141,6 +142,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -160,7 +162,7 @@
                                 <TextRun>
                                   <Value>विवरण </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -177,6 +179,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -196,7 +199,7 @@
                                 <TextRun>
                                   <Value>डेबिट </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -213,6 +216,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -232,7 +236,7 @@
                                 <TextRun>
                                   <Value>क्रेडिट</Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -249,6 +253,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -268,7 +273,7 @@
                                 <TextRun>
                                   <Value>डेबिट </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -285,6 +290,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -304,7 +310,7 @@
                                 <TextRun>
                                   <Value>क्रेडिट</Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -321,6 +327,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -340,7 +347,7 @@
                                 <TextRun>
                                   <Value>चेक नम्बर / विद्धुतीय कारोवार संकेत </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -357,6 +364,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -377,7 +385,7 @@
                                   <Value>बाँकी 
 </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -394,6 +402,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -414,7 +423,7 @@
                                   <Value>खर्च संकेत नम्बर 
 </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -431,6 +440,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -450,7 +460,7 @@
                                 <TextRun>
                                   <Value>रकम रु.</Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -467,6 +477,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -486,7 +497,7 @@
                                 <TextRun>
                                   <Value>दिइएको </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -503,6 +514,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -522,7 +534,7 @@
                                 <TextRun>
                                   <Value>फर्छिएको </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -539,6 +551,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -559,7 +572,7 @@
                                   <Value>जिम्मेवारी सारिएको 
 </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -576,6 +589,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -595,7 +609,7 @@
                                 <TextRun>
                                   <Value>फर्छिएको </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -612,6 +626,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -631,7 +646,7 @@
                                 <TextRun>
                                   <Value>डेबिट </Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -648,6 +663,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -667,7 +683,7 @@
                                 <TextRun>
                                   <Value>क्रेडिट</Value>
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -684,6 +700,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -703,7 +720,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontFamily>Nirmala UI Semilight</FontFamily>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -720,6 +737,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1928,74 +1946,11 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox63">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox63</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox64">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox64</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="SumMonthlyGLDebit">
@@ -2007,6 +1962,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyGLDebit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2040,6 +1996,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyGLCredit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2073,6 +2030,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyBankDebit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2106,6 +2064,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyBankCredit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2139,6 +2098,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2172,6 +2132,7 @@
                                 <TextRun>
                                   <Value>=(Fields!SumMonthlyGLDebit.Value+Fields!SumMonthlyBankDebit.Value)-(Fields!SumMonthlyGLCredit.Value+Fields!SumMonthlyBankCredit.Value)</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2205,6 +2166,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2238,6 +2200,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2271,6 +2234,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2304,6 +2268,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2337,6 +2302,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2370,6 +2336,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2403,6 +2370,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2436,6 +2404,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2469,6 +2438,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2528,74 +2498,11 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox73">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox73</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox74">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox74</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="SumPrevMonthlyGLDebit">
@@ -2607,6 +2514,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumPrevMonthlyGLDebit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2640,6 +2548,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumPrevMonthlyGLCredit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2673,6 +2582,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumPrevMonthlyBankDebit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2706,6 +2616,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumPrevMonthlyBankCredit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2739,6 +2650,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2772,6 +2684,7 @@
                                 <TextRun>
                                   <Value>=(Fields!SumPrevMonthlyGLDebit.Value+Fields!SumPrevMonthlyBankDebit.Value)-(Fields!SumPrevMonthlyGLCredit.Value+Fields!SumPrevMonthlyBankCredit.Value)</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2805,6 +2718,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2838,6 +2752,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2871,6 +2786,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2904,6 +2820,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2937,6 +2854,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2970,6 +2888,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3003,6 +2922,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3036,6 +2956,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3069,6 +2990,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3128,74 +3050,11 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>3</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox83">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox83</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox84">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox84</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="GLDebitAmount1">
@@ -3207,7 +3066,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyGLDebit.Value+Fields!SumPrevMonthlyGLDebit.Value</Value>
                                   <Style>
-                                    <FontFamily />
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3241,7 +3100,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyGLCredit.Value+Fields!SumPrevMonthlyGLCredit.Value</Value>
                                   <Style>
-                                    <FontFamily />
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3275,6 +3134,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyBankDebit.Value+Fields!SumPrevMonthlyBankDebit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3308,6 +3168,7 @@
                                 <TextRun>
                                   <Value>=Fields!SumMonthlyBankCredit.Value+Fields!SumPrevMonthlyBankCredit.Value</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3341,6 +3202,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3374,6 +3236,7 @@
                                 <TextRun>
                                   <Value>=((Fields!SumMonthlyGLDebit.Value+Fields!SumMonthlyBankDebit.Value)-(Fields!SumMonthlyGLCredit.Value+Fields!SumMonthlyBankCredit.Value))+((Fields!SumPrevMonthlyGLDebit.Value+Fields!SumPrevMonthlyBankDebit.Value)-(Fields!SumPrevMonthlyGLCredit.Value+Fields!SumPrevMonthlyBankCredit.Value))</Value>
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3407,6 +3270,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3440,6 +3304,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3473,6 +3338,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3506,6 +3372,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3539,6 +3406,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3572,6 +3440,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3605,6 +3474,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3638,6 +3508,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3671,6 +3542,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Nirmala UI</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -3712,8 +3584,9 @@
                               <TextRun>
                                 <Value />
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -3726,6 +3599,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3736,83 +3610,7 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember />
-                  </TablixMembers>
-                </TablixMember>
-                <TablixMember>
-                  <TablixHeader>
-                    <Size>0.425in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox96">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value />
-                                <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
-                                  <FontSize>9pt</FontSize>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox96</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
                     <TablixMember />
-                  </TablixMembers>
-                </TablixMember>
-                <TablixMember>
-                  <TablixHeader>
-                    <Size>0.425in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox97">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value />
-                                <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
-                                  <FontSize>9pt</FontSize>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox97</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
                 </TablixMember>
@@ -3829,7 +3627,7 @@
                               <TextRun>
                                 <Value>नगद मौज्दात </Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -3846,6 +3644,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3872,7 +3671,7 @@
                               <TextRun>
                                 <Value>बैंक मौज्दात </Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -3889,6 +3688,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3917,7 +3717,7 @@
                               <TextRun>
                                 <Value>बजेट खर्च </Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -3934,6 +3734,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3960,7 +3761,7 @@
                               <TextRun>
                                 <Value>चालु आर्थिक वर्षको पेश्की</Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -3977,6 +3778,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -4003,7 +3805,7 @@
                               <TextRun>
                                 <Value>गत विगत आर्थिक वर्षको पेश्की </Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -4020,6 +3822,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -4046,7 +3849,7 @@
                               <TextRun>
                                 <Value>विविध </Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -4063,6 +3866,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -4089,7 +3893,7 @@
                               <TextRun>
                                 <Value>कैफियत</Value>
                                 <Style>
-                                  <FontFamily>Nirmala UI Semilight</FontFamily>
+                                  <FontFamily>Nirmala UI</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -4106,6 +3910,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -4172,7 +3977,7 @@
 कार्यालय कोड नं. :  </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -4209,7 +4014,7 @@
                     <Value>बैंक नगदी किताब 
 </Value>
                     <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -4244,7 +4049,7 @@
                   <TextRun>
                     <Value>=First(Fields!StartDate.Value, "DataSet_Result") &amp; " देखि " &amp; First(Fields!EndDate.Value, "DataSet_Result") &amp; " सम्म "</Value>
                     <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -4277,9 +4082,18 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>बजेट उप शीर्षक न:</Value>
+                    <Value>बजेट उप शीर्षक न: </Value>
                     <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!DocType.Value</Value>
+                    <Style>
+                      <FontFamily>Nirmala UI</FontFamily>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -4309,9 +4123,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>म.ले.प.फारम नं :</Value>
+                    <Value>म.ले.प.फारम नं :२०९ </Value>
                     <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -4322,18 +4136,12 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>साबिकको फारम नं : </Value>
-                    <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">
+                    <Value>साबिकको फारम नं :५  
 </Value>
                     <Style>
-                      <FontFamily>Nirmala UI Semilight</FontFamily>
+                      <FontFamily>Nirmala UI</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -4341,7 +4149,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox94</rd:DefaultName>
-            <Left>9.81809in</Left>
+            <Top>0.01389in</Top>
+            <Left>10.02642in</Left>
             <Height>0.375in</Height>
             <Width>1.1in</Width>
             <ZIndex>5</ZIndex>
@@ -4474,6 +4283,9 @@ End Function
         </Field>
         <Field Name="SumPrevMonthlyBankCreditFormat">
           <DataField>SumPrevMonthlyBankCreditFormat</DataField>
+        </Field>
+        <Field Name="DocType">
+          <DataField>DocType</DataField>
         </Field>
         <Field Name="GL_Posting_Date">
           <DataField>GL_Posting_Date</DataField>
