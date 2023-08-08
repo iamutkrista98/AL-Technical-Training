@@ -1,10 +1,11 @@
-report 50101 Malepa209
+report 50103 ReportWordLayout
 {
     ApplicationArea = All;
-    Caption = 'Malepa209';
+    Caption = 'ReportWordLayout';
     UsageCategory = ReportsAndAnalysis;
-    DefaultLayout = RDLC;
-    RDLCLayout = 'src/Report/RDLC/MalepaBankNagadi.rdl';
+    DefaultLayout = Word;
+    WordLayout = 'src/Report/WordLayout/Malepa.docx';
+
     dataset
     {
         dataitem("Company Information"; "Company Information")
@@ -283,6 +284,5 @@ report 50101 Malepa209
 
 
     end;
-
 
 }

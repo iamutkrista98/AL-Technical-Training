@@ -6,7 +6,7 @@ tableextension 50101 "General Ledger Setup Ext" extends "General Ledger Setup"
         {
             Caption = 'Agile Journal Template';
             DataClassification = ToBeClassified;
-            TableRelation = "Gen. Journal Template".Name;
+            TableRelation = "Gen. Journal Template";
         }
         field(50101; "Agile Journal Batch"; Text[100])
         {

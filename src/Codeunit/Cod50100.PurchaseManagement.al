@@ -7,6 +7,8 @@ codeunit 50100 PurchaseManagement
         PostedSaleHdr: Record "Posted Sales Header Agile";
         PostedSaleLine: Record "Posted Sales Line Agile";
         totalAmount: Decimal;
+        Line: Record "Gen. Journal Line";
+        Gen: Codeunit "Gen. Jnl.-Post Line";
     begin
         if not ValidateUserBeforePosting() then
             Error('Access Denied!');
@@ -25,6 +27,22 @@ codeunit 50100 PurchaseManagement
                     totalAmount += SaleLine."Total Amount";
                     PostedSaleLine.Insert();
                     InsertIntoSalesLedger(SaleLine);
+                    Line.Init();
+                    Line."Journal Batch Name" := 'DEFAULT';
+                    Line."Journal Template Name" := 'GENERAL';
+                    Line."Posting Date" := PostedSaleHdr."Posting Date";
+                    Line."Document No." := SaleHdr."No.";
+                    Line."Document Type" := Line."Document Type"::Payment;
+                    Line."Account Type" := Line."Account Type"::"G/L Account";
+                    Line."Sales Header Agile No." := SaleHdr."No.";
+                    Line."Account No." := '2910';
+                    Line.Description := PostedSaleHdr."Customer Name";
+                    Line."Debit Amount" := 1000;
+                    Line."Bal. Account Type" := Line."Bal. Account Type"::Customer;
+                    Line."Credit Amount" := 1000;
+                    Line."Bal. Account No." := PostedSaleHdr."Customer No.";
+                    Line.Insert(true);
+                    Gen.RunWithCheck(Line);
                 until SaleLine.Next() = 0;
             PostedSaleHdr."Total Amount" := totalAmount;
             PostedSaleHdr.Modify();
