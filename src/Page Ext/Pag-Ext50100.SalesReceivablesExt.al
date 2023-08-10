@@ -11,6 +11,17 @@ pageextension 50100 SalesReceivablesExt extends "Sales & Receivables Setup"
 
 
             }
+            field("testnoseries"; Rec.testnoseries)
+            {
+                ApplicationArea = All;
+
+            }
+
+
+        }
+        modify("Customer Nos.")
+        {
+            Visible = false;
 
         }
     }

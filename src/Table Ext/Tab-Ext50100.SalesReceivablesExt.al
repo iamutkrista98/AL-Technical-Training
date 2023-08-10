@@ -7,5 +7,9 @@ tableextension 50100 "Sales&ReceivablesExt" extends "Sales & Receivables Setup"
             Caption = 'salenoseries';
             DataClassification = ToBeClassified;
         }
+        field(50101; testnoseries; Code[20])
+        {
+            TableRelation = "No. Series";
+        }
     }
 }

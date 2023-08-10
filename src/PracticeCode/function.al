@@ -122,7 +122,11 @@ page 50139 MyPage
                 var
                     num1: Integer;
                     num2: Integer;
+                    validateUser: Codeunit PurchaseManagement;
                 begin
+                    if not validateUser.ValidateUserBeforePosting() then
+                        Error('can''t continue from this point on');
+
                     num1 := Number;
                     num2 := TestProcedure(num2);
                     Message('num1 is %1', num1);
@@ -130,6 +134,32 @@ page 50139 MyPage
 
                 end;
 
+            }
+            action(GenerateFibonacciSeries)
+            {
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+                ApplicationArea = All;
+                Image = Create;
+
+                trigger OnAction()
+                var
+                    n1: Integer;
+                    n2: Integer;
+                    n3: Integer;
+                    I: Integer;
+
+                begin
+                    n1 := 0;
+                    n2 := 1;
+                    for I := 2 to 10 do begin
+                        n3 := n1 + n2;
+                        Message('The numbers within the sequence are %1', n3);
+                        n1 := n2;
+                        n2 := n3;
+                    end;
+                end;
             }
             action(DateOperations)
             {
