@@ -25,12 +25,26 @@ table 50102 "Sales Line Agile"
             var
                 Itm: Record Item;
                 GL: Record "G/L Account";
+                BillLine: Record "Sales Line Agile";
             begin
                 if Itm.Get("No.") then
                     Validate(Amount, Itm."Unit Price")
                 else
                     if GL.Get("No.") then
                         Validate(Amount, GL."Debit Amount");
+                BillLine.Reset();
+                BillLine.SetRange("Document No.", Rec."Document No.");
+                if BillLine.FindSet() then begin
+                    repeat
+                        if (Type = Type::Item) and (BillLine."No." = "No.") then
+                            Error('Item already exists, no duplicate entry allowed');
+                        if (Type = Type::GLAccount) and (BillLine."No." = "No.") then
+                            Error('GL Entry already exist, no duplicate entry allowed');
+                    until BillLine.Next() = 0;
+
+
+                end
+
             end;
 
         }

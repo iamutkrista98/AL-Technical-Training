@@ -56,6 +56,65 @@ pageextension 50105 CustomerExt extends "Customer Card"
 {
     layout
     {
+        addafter(Name)
+        {
+            field(ItemDescription; ItemDescription)
+            {
+                //ApplicationArea = All;
+
+                //Through Lookup Populating field
+
+                // trigger OnLookup(var Text: Text): Boolean
+                // var
+                //     ItemRec: Record Item;
+                // begin
+                //     ItemRec.Reset();
+                //     if Page.RunModal(Page::"Item List", ItemRec) = Action::LookupOK then
+                //         ItemDescription := ItemRec.Description;
+                // end;
+
+                //Lookup list multi select
+
+            }
+            field(ItemFilter; ItemFilter)
+            {
+                ApplicationArea = All;
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    ItemList: Page "Item List";
+                begin
+                    Clear(ItemFilter);
+                    ItemList.LookupMode(true);
+                    if ItemList.RunModal() = Action::LookupOK then begin
+                        Text += ItemList.GetSelectionFilter();
+                        exit(true);
+
+                    end else
+                        exit(false);
+
+                end;
+            }
+            field(CustRank; CustRank)
+            {
+                ApplicationArea = All;
+
+                trigger OnValidate()
+                begin
+                    case CustRank
+                    of
+                        CustRank::Bronze:
+                            Message('You are a bronze member');
+                        CustRank::Gold:
+                            Message('You are a gold member');
+                        CustRank::Platinum:
+                            Message('You are a platinum member');
+                        CustRank::Silver:
+                            Message('You are a silver member');
+                    end;
+                end;
+            }
+
+        }
         modify(Address)
         {
             trigger OnBeforeValidate();
@@ -70,9 +129,41 @@ pageextension 50105 CustomerExt extends "Customer Card"
 
     actions
     {
+        addafter("&Jobs")
+        {
+            action(NumberOfCustomers)
+            {
+                ApplicationArea = All;
+                Image = Totals;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    Cust: Record Customer;
+                    count: Integer;
+                begin
+                    Cust.FindFirst();
+                    count := 0;
+                    if Cust.FindSet() then
+                        repeat
+                            count += 1;
+                        until Cust.Next() = 0;
+                    Message('The number of customers in the list are: %1', count);
+
+                end;
+
+
+
+            }
+        }
         // Add changes to page actions here
     }
 
     var
         myInt: Integer;
+        ItemDescription: Text[200];
+        ItemFilter: Text[200];
+        CustRank: Enum CustRank;
 }

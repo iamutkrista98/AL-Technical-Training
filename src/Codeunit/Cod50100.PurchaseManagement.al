@@ -17,7 +17,6 @@ codeunit 50100 PurchaseManagement
             PostedSaleHdr.TransferFields(SaleHdr);
             PostedSaleHdr.Insert(true);
             PostedSaleHdr.Modify();
-
             SaleLine.Reset();
             SaleLine.SetRange("Document No.", SaleHdr."No.");
             if SaleLine.FindSet() then
@@ -35,12 +34,14 @@ codeunit 50100 PurchaseManagement
                     Line."Document Type" := Line."Document Type"::Payment;
                     Line."Account Type" := Line."Account Type"::"G/L Account";
                     Line."Sales Header Agile No." := SaleHdr."No.";
+                    // Line."Line No." := 60000;
                     Line."Account No." := '2910';
                     Line.Description := PostedSaleHdr."Customer Name";
                     Line."Debit Amount" := 1000;
                     Line."Bal. Account Type" := Line."Bal. Account Type"::Customer;
                     Line."Credit Amount" := 1000;
                     Line."Bal. Account No." := PostedSaleHdr."Customer No.";
+                    Line.Amount := 69;
                     Line.Insert(true);
                     Gen.RunWithCheck(Line);
                 until SaleLine.Next() = 0;

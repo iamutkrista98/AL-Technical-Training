@@ -31,7 +31,7 @@ page 50100 "Sales  Header Agile List"
                 field("Total Amount"; Rec."Total Amount")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Total Amount field.';
+                    AutoFormatType = 11;
                 }
                 field("Posting Date"; Rec."Posting Date")
                 {

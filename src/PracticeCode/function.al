@@ -59,6 +59,10 @@ page 50139 MyPage
             action(calcfields)
             {
                 ApplicationArea = All;
+                Image = Calculate;
+                Promoted = true;
+                PromotedCategory = New;
+
                 trigger OnAction()
                 begin
                     cus."No." := '01454545';
@@ -74,6 +78,9 @@ page 50139 MyPage
             action(calcFactorial)
             {
                 ApplicationArea = All;
+                Promoted = true;
+                Image = NumberGroup;
+                PromotedCategory = New;
 
                 trigger OnAction()
                 begin
@@ -89,7 +96,7 @@ page 50139 MyPage
                 ApplicationArea = All;
                 Image = Calculate;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedIsBig = true;
 
                 trigger OnAction()
@@ -107,7 +114,7 @@ page 50139 MyPage
             {
                 ApplicationArea = All;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedIsBig = true;
                 Image = SendConfirmation;
 
@@ -128,7 +135,7 @@ page 50139 MyPage
             {
                 ApplicationArea = All;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedIsBig = true;
                 Image = Calendar;
 
@@ -145,7 +152,7 @@ page 50139 MyPage
             {
                 ApplicationArea = All;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedIsBig = true;
 
                 Image = Process;
@@ -192,7 +199,7 @@ page 50139 MyPage
             {
                 ApplicationArea = All;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedOnly = true;
                 Image = Totals;
                 trigger OnAction()
@@ -206,11 +213,12 @@ page 50139 MyPage
                 end;
 
             }
+
             action(ControlStatementsEval)
             {
                 ApplicationArea = All;
                 Promoted = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 PromotedIsBig = true;
                 Image = SendConfirmation;
                 trigger OnAction()
@@ -247,7 +255,7 @@ page 50139 MyPage
                 ApplicationArea = All;
                 Promoted = true;
                 PromotedIsBig = true;
-                PromotedCategory = Process;
+                PromotedCategory = New;
                 Image = Find;
 
                 trigger OnAction()
@@ -260,11 +268,86 @@ page 50139 MyPage
                     //         Message('Customer Name: %1\Customer Address: Cust.Name, Cust.Address', Cust.Name, Cust.Address);
                     //     until Cust.Next() = 0;
 
-                    Cust.SetFilter(Cust.Name, '@S*');
+                    Cust.SetFilter(Cust.Name, '%1', '@S*');
                     if Cust.FindSet() then
                         repeat
-                            Message('Customer Name: %1\Customer Address: Cust.Name, Cust.Address', Cust.Name, Cust.Address);
+                            Message('Customer Name: %1\Customer Address:%2', Cust.Name, Cust.Address);
                         until Cust.Next() = 0;
+                end;
+
+            }
+            action(StringOperations)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = New;
+
+                trigger OnAction()
+                var
+                    lower: Text[200];
+                    upper: Text[200];
+                    sub: Text[200];
+                    x: Integer;
+
+
+                begin
+                    upper := textvalue.ToUpper();
+                    lower := textvalue.ToLower();
+                    Message('The string contains the word: %1', lower.Contains('hello'));
+                    sub := lower.Substring(3, 3);
+                    Message('The uppercase text transformation: %1\ In Lowercase: %2\ The substring is %3', upper, lower, sub);
+                    Message('The new text is: %1', textvalue.Replace('Hello', 'Good Morning'));
+                    x := Random(42);
+                    Message('The random number generated is %1', x);
+                end;
+            }
+            action(DateCalculations)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    initialDate: Date;
+                    subDate: Date;
+                    GnlEntries: Record "G/L Entry";
+                    count: Integer;
+                begin
+                    subDate := 20240331D;
+                    GnlEntries.SetRange("Posting Date", Today, subDate);
+                    count := 0;
+                    if GnlEntries.FindSet() then
+                        repeat
+                            count += 1;
+                        until GnlEntries.Next() = 0;
+                    Message('The number of entries with posting date between today and 2024-03-31 is %1', count);
+                end;
+
+
+            }
+            action(ProcedureTesting)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
+                Image = TestDatabase;
+
+                PromotedCategory = New;
+
+                trigger OnAction()
+                var
+                    number: Integer;
+                    text1: Text[200];
+                    ValidateEvent: Codeunit "Validate Events";
+                begin
+                    number := 23;
+                    text1 := ValidateEvent.validateNumber(number);
+                    Message('%1', text1);
+
+
                 end;
 
             }
@@ -310,10 +393,17 @@ page 50139 MyPage
 
         Customers: List of [Text];
 
+        textvalue: Text[200];
+
     procedure TestProcedure(var num1: Integer): Integer
     begin
         num1 := 30;
         exit(num1);
 
+    end;
+
+    trigger OnOpenPage()
+    begin
+        textvalue := 'Hello there, how Are u';
     end;
 }

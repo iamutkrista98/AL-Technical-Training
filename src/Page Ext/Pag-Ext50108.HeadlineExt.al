@@ -7,6 +7,7 @@ pageextension 50108 HeadlineExt extends "Headline RC Business Manager"
             field(HeadlineTxt1; HeadlineTxt1)
             {
                 ApplicationArea = All;
+                Caption = 'Headlines for Today';
                 trigger OnDrillDown()
                 begin
                     Hyperlink('https://www.google.com');

@@ -33,4 +33,12 @@ codeunit 50103 "Validate Events"
 
     end;
 
+    procedure validateNumber(var Number: Integer): Text
+    begin
+        if Number mod 2 = 0 then
+            exit('Even Number')
+        else
+            exit('Odd Number');
+    end;
+
 }
