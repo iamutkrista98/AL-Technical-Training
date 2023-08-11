@@ -438,6 +438,71 @@ page 50139 MyPage
 
                 end;
             }
+            action(IdentifyNumber)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+                Image = Help;
+                trigger OnAction()
+                var
+                    Numbers: List of [Integer];
+                    I: Integer;
+                    testnum: Integer;
+                    result: Text;
+                begin
+                    Numbers.AddRange(1, 2, 4, 8, 16, 32, 64);
+                    testnum := Number;
+                    for I := 1 to Numbers.Count() do begin
+                        if testnum = Numbers.Get(I) then begin
+                            result := 'Validated';
+                            break;
+                        end
+                        else
+                            result := 'Not Validated';
+                    end;
+                    Message('The number %1 is %2', testnum, result);
+
+
+
+
+                end;
+            }
+            action(BalanceCheck)
+            {
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    ArrayNum: array[10] of Integer;
+                    I: Integer;
+                    testnum: Integer;
+                    result: Text;
+                begin
+
+                    for I := 1 to ArrayLen(ArrayNum) do begin
+                        ArrayNum[I] := Random(20);
+                    end;
+                    testnum := Number;
+                    Clear(I);
+                    for I := 1 to ArrayLen(ArrayNum) do begin
+                        if testnum = ArrayNum[I] then begin
+                            result := 'Balanced';
+                            break;
+                        end
+                        else
+                            result := 'Not Balanced';
+                    end;
+
+
+                end;
+
+            }
         }
 
         area(Navigation)

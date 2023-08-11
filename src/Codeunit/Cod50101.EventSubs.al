@@ -60,6 +60,16 @@ pageextension 50105 CustomerExt extends "Customer Card"
         {
             field(ItemDescription; ItemDescription)
             {
+                ApplicationArea = All;
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    ItemRec: Record Item;
+                begin
+                    ItemRec.Reset();
+                    if Page.RunModal(Page::"Item List", ItemRec) = Action::LookupOK then
+                        ItemDescription := ItemRec.Description;
+
+                end;
                 //ApplicationArea = All;
 
                 //Through Lookup Populating field
@@ -171,9 +181,22 @@ pageextension 50105 CustomerExt extends "Customer Card"
     var
         Words: List of [Text];
         Lines: List of [Text];
+        WordPointer: Integer;
+        LinePointer: Integer;
+        Builder: TextBuilder;
     begin
         Words := GetText().Split(' ');
         Message('%1', Words.Get(1));
+        for WordPointer := 1 to Words.Count() do begin
+            if Builder.Length() > 0 then
+                Builder.Append(' ');
+            Builder.Append(Words.Get(WordPointer));
+            if Builder.Length() > 3 then begin
+                Lines.Add(Builder.ToText());
+                Clear(Builder);
+            end
+        end;
+        Message('%1\%2\%3', Lines.Get(1), Lines.Get(2), Lines.Get(3));
     end;
 
     local procedure GetText(): Text
