@@ -381,6 +381,63 @@ page 50139 MyPage
                 end;
 
             }
+            action(AddRecord)
+            {
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+                ApplicationArea = All;
+                Image = Add;
+
+                trigger OnAction()
+                var
+                    SalesHdr: Record "Sales Header Agile";
+                    SalesLine: Record "Sales Line Agile";
+                begin
+                    SalesHdr.Init();
+                    SalesHdr.Reset();
+                    SalesHdr.Validate("Customer No.", '10000');
+                    SalesHdr.Insert(true);
+                    SalesLine.Reset();
+                    SalesLine.SetRange("Document No.", SalesHdr."No.");
+                    if SalesLine.FindSet() then
+                        repeat
+                            SalesLine.Init();
+                            SalesLine.Validate("Document No.", SalesHdr."No.");
+                            SalesLine."Line No." += 10000;
+                            SalesLine.Validate(Type, SalesLine.Type::Item);
+                            SalesLine.Validate("No.", '1000');
+                            SalesLine.Validate(Quantity, 2);
+                            SalesLine.Insert(true);
+                            Message('Record Inserted Successfully!');
+                        until SalesLine.Next() = 0;
+
+                end;
+            }
+            action(FindRecord)
+            {
+                Promoted = true;
+                PromotedCategory = New;
+                PromotedIsBig = true;
+                ApplicationArea = All;
+                Image = Find;
+                trigger OnAction()
+                var
+                    Cust: Record Customer;
+                    count: Integer;
+                begin
+                    Cust.Reset();
+                    Cust.SetFilter(Cust.Name, '%1', '@S*');
+                    Cust.SetFilter(Cust."Location Code", '%1', '@Y*');
+                    count := 0;
+                    if Cust.FindSet() then
+                        repeat
+                            count += 1;
+                        until Cust.Next() = 0;
+                    Message('The number of records found with Customer Name Starting with letter S and location code  starting with letter Y is %1', count);
+
+                end;
+            }
         }
 
         area(Navigation)
