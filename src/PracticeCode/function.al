@@ -405,7 +405,7 @@ page 50139 MyPage
                             SalesLine.Init();
                             SalesLine.Validate("Document No.", SalesHdr."No.");
                             SalesLine."Line No." += 10000;
-                            SalesLine.Validate(Type, SalesLine.Type::Item);
+                            SalesLine.Type := SalesLine.Type::Item;
                             SalesLine.Validate("No.", '1000');
                             SalesLine.Validate(Quantity, 2);
                             SalesLine.Insert(true);
@@ -463,10 +463,6 @@ page 50139 MyPage
                             result := 'Not Validated';
                     end;
                     Message('The number %1 is %2', testnum, result);
-
-
-
-
                 end;
             }
             action(BalanceCheck)
@@ -517,8 +513,14 @@ page 50139 MyPage
                     RunObject = page "Customer Card";
 
                 }
+                action("Customer Purchases")
+                {
+                    ApplicationArea = All;
+                    Image = Info;
+                }
 
             }
+
 
         }
         area(Reporting)
@@ -528,6 +530,15 @@ page 50139 MyPage
                 ApplicationArea = All;
                 Image = Report;
                 RunObject = report "Sales Report";
+            }
+            action("Run Report")
+            {
+                ApplicationArea = All;
+                Image = Report;
+                Promoted = true;
+                PromotedCategory = New;
+                RunObject = report Malepa209;
+
             }
 
         }
