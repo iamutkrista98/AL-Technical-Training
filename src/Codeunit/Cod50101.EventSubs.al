@@ -166,4 +166,27 @@ pageextension 50105 CustomerExt extends "Customer Card"
         ItemDescription: Text[200];
         ItemFilter: Text[200];
         CustRank: Enum CustRank;
+
+    trigger OnOpenPage()
+    var
+        Words: List of [Text];
+        Lines: List of [Text];
+    begin
+        Words := GetText().Split(' ');
+        Message('%1', Words.Get(1));
+    end;
+
+    local procedure GetText(): Text
+    begin
+        exit('Procedure GetText not implemented.');
+    end;
+
+
+
+}
+
+pageextension 50190 CustomerListExt extends "Customer List"
+{
+
+
 }
