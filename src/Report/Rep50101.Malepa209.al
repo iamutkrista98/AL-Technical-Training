@@ -1,10 +1,10 @@
 report 50101 Malepa209
 {
     ApplicationArea = All;
-    Caption = 'Malepa209';
+    Caption = 'Malepa2091';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    RDLCLayout = 'src/Report/RDLC/MalepaBankNagadi.rdl';
+    RDLCLayout = 'src/Report/RDLC/MalepaBankNagadi.rdlc';
     dataset
     {
         dataitem("Company Information"; "Company Information")

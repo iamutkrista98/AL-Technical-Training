@@ -11,7 +11,7 @@ table 50104 "Sales Ledger Entry Agile"
         }
         field(2; "No."; Code[20])
         {
-            Caption = 'No.';
+            Caption = 'No';
         }
         field(3; "Customer No."; Code[20])
         {

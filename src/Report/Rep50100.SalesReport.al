@@ -79,7 +79,7 @@ report 50100 "Sales Report"
                         if Type = Type::"Item" then
                             Itm.GET("Posted Sales Line Agile"."No.")
                         else
-                            if Type = Type::"GLAccount" then
+                            if Type = Type::"GL Account" then
                                 GL.GET("Posted Sales Line Agile"."No.");
 
 

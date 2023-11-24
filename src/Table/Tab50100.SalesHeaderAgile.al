@@ -2,40 +2,33 @@ table 50100 "Sales Header Agile"
 {
     Caption = 'Sales Header Agile';
     DataClassification = ToBeClassified;
-    LookupPageId = "Item Card";
-    DrillDownPageId = "Item Card";
 
     fields
     {
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
-
             trigger OnValidate()
             var
-                SaleSetup: Record "Sales & Receivables Setup";
+                SalesSetup: Record "Sales & Receivables Setup";
                 NoSerMgt: Codeunit NoSeriesManagement;
             begin
                 if Rec."No." <> xRec."No." then
-                    SaleSetup.Get();
-                SaleSetup.TestField(SaleSetup."salenoseries");
+                    SalesSetup.Get();
+                SalesSetup.TestField(SalesSetup.salenoseries);
                 NoSerMgt.SetSeries("No.");
             end;
         }
         field(2; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
-
-
             TableRelation = Customer."No.";
-
             trigger OnValidate()
             var
-                Cust: Record Customer;
+                Cus: Record Customer;
             begin
-                if Cust.Get("Customer No.") then
-                    Validate("Customer Name", Cust.Name);
-
+                if Cus.Get("Customer No.") then
+                    "Customer Name" := Cus.Name;
             end;
         }
         field(3; "Customer Name"; Text[200])
@@ -47,7 +40,6 @@ table 50100 "Sales Header Agile"
             Caption = 'Total Amount';
             FieldClass = FlowField;
             CalcFormula = sum("Sales Line Agile"."Total Amount" where("Document No." = field("No.")));
-            Editable = false;
         }
         field(5; "Posting Date"; Date)
         {
@@ -57,34 +49,25 @@ table 50100 "Sales Header Agile"
         {
 
         }
-
     }
     keys
     {
-        key(Key1; "No.")
+        key(PK; "No.")
         {
             Clustered = true;
         }
-    }
-    fieldgroups
-    {
-        fieldgroup(DropDown; "No.") { }
-        fieldgroup(Brick; "Customer No.", "Customer Name", "Posting Date") { }
     }
 
     trigger OnInsert()
     var
         SalesSetup: Record "Sales & Receivables Setup";
-        NoSerMgt: Codeunit "NoSeriesManagement";
+        NoSerMgt: Codeunit NoSeriesManagement;
     begin
         if "No." = '' then begin
             SalesSetup.Get();
-            SalesSetup.TestField(SalesSetup."salenoseries");
+            SalesSetup.TestField(SalesSetup.salenoseries);
             Clear(NoSerMgt);
             NoSerMgt.InitSeries(SalesSetup.salenoseries, xRec.saleno, 0D, "No.", Rec.saleno);
-
         end;
-        "Posting Date" := Today;
-
     end;
 }

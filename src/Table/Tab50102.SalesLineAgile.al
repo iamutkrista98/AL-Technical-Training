@@ -11,42 +11,30 @@ table 50102 "Sales Line Agile"
         }
         field(2; "Type"; Option)
         {
+            OptionMembers = Item,"GL Account";
             Caption = 'Type';
-            OptionMembers = ,Item,GLAccount;
         }
         field(3; "No."; Code[20])
         {
             Caption = 'No.';
-            TableRelation = if (Type = const(Item)) Item."No."
+            TableRelation = if (Type = const(Item)) Item
             else
-            if (Type = const(GLAccount)) "G/L Account"."No.";
+            if (Type = const("GL Account")) "G/L Account";
 
             trigger OnValidate()
             var
                 Itm: Record Item;
                 GL: Record "G/L Account";
-                BillLine: Record "Sales Line Agile";
             begin
-                if Itm.Get("No.") then
-                    Validate(Amount, Itm."Unit Price")
-                else
+                if (Type = Type::Item) then begin
+                    if Itm.Get("No.") then
+                        Amount := Itm."Amount Agile";
+                end;
+                if (Type = Type::"GL Account") then begin
                     if GL.Get("No.") then
-                        Validate(Amount, GL."Debit Amount");
-                BillLine.Reset();
-                BillLine.SetRange("Document No.", Rec."Document No.");
-                if BillLine.FindSet() then begin
-                    repeat
-                        if (Type = Type::Item) and (BillLine."No." = "No.") then
-                            Error('Item already exists, no duplicate entry allowed');
-                        if (Type = Type::GLAccount) and (BillLine."No." = "No.") then
-                            Error('GL Entry already exist, no duplicate entry allowed');
-                    until BillLine.Next() = 0;
-
-
-                end
-
+                        Amount := GL."Amount Agile";
+                end;
             end;
-
         }
         field(4; Amount; Decimal)
         {
@@ -54,16 +42,15 @@ table 50102 "Sales Line Agile"
             Editable = false;
             trigger OnValidate()
             begin
-                "Total Amount" := Quantity * Amount;
+                "Total Amount" := Amount * Quantity;
             end;
-
         }
         field(5; Quantity; Integer)
         {
             Caption = 'Quantity';
             trigger OnValidate()
             begin
-                "Total Amount" := Quantity * Amount;
+                "Total Amount" := Amount * Quantity;
             end;
         }
         field(6; "Total Amount"; Decimal)

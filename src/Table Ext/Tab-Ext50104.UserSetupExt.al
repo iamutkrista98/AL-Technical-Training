@@ -1,4 +1,4 @@
-tableextension 50104 UserSetupExt extends "User Setup"
+tableextension 50105 UserSetupExt extends "User Setup"
 {
     fields
     {

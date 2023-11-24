@@ -1,4 +1,4 @@
-tableextension 50101 "General Ledger Setup Ext" extends "General Ledger Setup"
+tableextension 50109 "General Ledger Setup Ext" extends "General Ledger Setup"
 {
     fields
     {

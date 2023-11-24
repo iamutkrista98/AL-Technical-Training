@@ -11,8 +11,8 @@ table 50103 "Posted Sales Line Agile"
         }
         field(2; "Type"; Option)
         {
+            OptionMembers = Item,"GL Account";
             Caption = 'Type';
-            OptionMembers = ,Item,GLAccount;
         }
         field(3; "No."; Code[20])
         {
@@ -29,14 +29,12 @@ table 50103 "Posted Sales Line Agile"
         field(6; "Total Amount"; Decimal)
         {
             Caption = 'Total Amount';
+
         }
         field(7; "Line No."; Integer)
         {
 
         }
-
-
-
     }
     keys
     {
