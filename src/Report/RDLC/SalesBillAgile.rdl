@@ -1059,7 +1059,11 @@
                                   <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
-                                  <TablixMember />
+                                  <TablixMember>
+                                    <Visibility>
+                                      <Hidden>=Fields!No_.Value="AGILE-0016"</Hidden>
+                                    </Visibility>
+                                  </TablixMember>
                                   <TablixMember />
                                   <TablixMember />
                                 </TablixMembers>
@@ -1165,9 +1169,38 @@
       <Width>7.26958in</Width>
       <Page>
         <PageHeader>
-          <Height>0.11458in</Height>
+          <Height>0.43in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!Filters.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Height>0.25in</Height>
+              <Width>1in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1223,6 +1256,9 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="Filters">
+          <DataField>Filters</DataField>
+        </Field>
         <Field Name="CompName">
           <DataField>CompName</DataField>
         </Field>

@@ -11,6 +11,10 @@ report 50100 "Sales Report Agile"
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";
+            column(Filters; Filters)
+            {
+
+            }
             column(CompName; CompInfo.Name)
             {
 
@@ -122,11 +126,19 @@ report 50100 "Sales Report Agile"
             {
             }
         }
+
     }
+
+    trigger OnPreReport()
+    begin
+
+        Filters := "Posted Sales Header Agile".GetFilters();
+    end;
 
 
     var
         CompInfo: Record "Company Information";
         Itm: Record Item;
         GL: Record "G/L Account";
+        Filters: Text;
 }

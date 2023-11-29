@@ -44,8 +44,11 @@ page 50100 "Sales  Header Agile List"
 
     trigger OnOpenPage()
     begin
-        Rec.FilterGroup(223);
+        Rec.FilterGroup(2);
         Rec.SetFilter("No.", '=%1', 'AGILE-0050');
         Rec.FilterGroup(0);
+        Rec.SetFilter("Customer No.", '<>%1', '10000');
+
+
     end;
 }
