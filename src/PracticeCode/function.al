@@ -529,7 +529,7 @@ page 50139 MyPage
             {
                 ApplicationArea = All;
                 Image = Report;
-                RunObject = report "Sales Report";
+                RunObject = report "Sales Report Agile";
             }
             action("Run Report")
             {

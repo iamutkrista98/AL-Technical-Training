@@ -75,7 +75,7 @@ page 50104 PostedSalesHeaderAgileCard
                     PostedSaleHdr.Reset();
                     PostedSaleHdr.SetRange("No.", Rec."No.");
                     if PostedSaleHdr.FindSet() then
-                        Report.Run(Report::"Sales Report", true, true, PostedSaleHdr);
+                        Report.Run(Report::"Sales Report Agile", true, true, PostedSaleHdr);
 
                 end;
 
