@@ -140,6 +140,30 @@ codeunit 50100 PurchaseManagement
 
     end;
 
+    procedure SendAnEmail()
+    var
+        myInt: Integer;
+        Email: Codeunit Email;
+        EmailMsg: Codeunit "Email Message";
+        Instr: InStream;
+        FileName: Text;
+        EmailBody: Label 'Dear <b>%1</b>,<p>Please find attached document below</p><hr>';
+
+    begin
+        EmailMsg.Create('iamutkrista98@gmail.com', 'Sending an Email in AL', '', true);
+        EmailMsg.AppendToBody(StrSubstNo(EmailBody, UserId));
+        if UploadIntoStream('Select the file', '', 'This files|*.jpg;*.pdf', FileName, Instr) then
+            EmailMsg.AddAttachment(FileName, '', Instr)
+        else
+            Message('There was an error uploading, %1', GetLastErrorText());
+        if Email.Send(EmailMsg) then
+            Message('The email was sent successfully')
+        else
+            Message('There was an error sending the mail, %1', GetLastErrorText());
+
+
+    end;
+
 
 
 

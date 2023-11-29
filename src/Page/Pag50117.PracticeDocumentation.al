@@ -79,6 +79,7 @@ page 50117 PracticeDocumentation
                         end;
 
                     }
+
                 }
             }
         }
@@ -161,6 +162,28 @@ page 50117 PracticeDocumentation
 
 
                 end;
+            }
+            action(SendEmail)
+            {
+                ApplicationArea = All;
+                PromotedIsBig = true;
+                Promoted = true;
+                PromotedCategory = Process;
+                Image = Email;
+
+                trigger OnAction()
+                var
+                    EmCU: Codeunit PurchaseManagement;
+                begin
+                    if Confirm('Are you sure you want to execute this action?', true) then
+                        EmCU.SendAnEmail();
+
+                end;
+
+
+
+
+
             }
 
         }

@@ -14,6 +14,14 @@ codeunit 50101 EventSubs
 
     // end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Reverse", 'OnReverseGLEntryOnBeforeInsertGLEntry', '', false, false)]
+    local procedure OnReverseGLEntryOnBeforeInsertGLEntry(GenJnlLine: Record "Gen. Journal Line"; GLEntry2: Record "G/L Entry"; var GLEntry: Record "G/L Entry")
+    begin
+        GLEntry."Posting Date" := Today();
+    end;
+
+
+
 
     [IntegrationEvent(false, false)]
     procedure OnAddressLineChanged(line: Text[100]);

@@ -41,4 +41,11 @@ page 50100 "Sales  Header Agile List"
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        Rec.FilterGroup(223);
+        Rec.SetFilter("No.", '=%1', 'AGILE-0050');
+        Rec.FilterGroup(0);
+    end;
 }
